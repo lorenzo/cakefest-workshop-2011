@@ -43,18 +43,14 @@
 	<?php if (!empty($course['Instructor'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('User Id'); ?></th>
-		<th><?php echo __('Course Id'); ?></th>
+		<th><?php echo __('Name'); ?></th>
 		<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
 		$i = 0;
 		foreach ($course['Instructor'] as $instructor): ?>
 		<tr>
-			<td><?php echo $instructor['id'];?></td>
-			<td><?php echo $instructor['user_id'];?></td>
-			<td><?php echo $instructor['course_id'];?></td>
+			<td><?php echo $instructor['User']['full_name'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'instructors', 'action' => 'view', $instructor['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'instructors', 'action' => 'edit', $instructor['id'])); ?>
@@ -76,18 +72,14 @@
 	<?php if (!empty($course['Student'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('User Id'); ?></th>
-		<th><?php echo __('Course Id'); ?></th>
+		<th><?php echo __('Name'); ?></th>
 		<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
 		$i = 0;
 		foreach ($course['Student'] as $student): ?>
 		<tr>
-			<td><?php echo $student['id'];?></td>
-			<td><?php echo $student['user_id'];?></td>
-			<td><?php echo $student['course_id'];?></td>
+			<td><?php echo $student['User']['full_name'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'students', 'action' => 'view', $student['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'students', 'action' => 'edit', $student['id'])); ?>
