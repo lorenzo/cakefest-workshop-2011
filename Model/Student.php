@@ -14,7 +14,7 @@ class Student extends AppModel {
 	public $validate = array(
 		'user_id' => array(
 			'uuid' => array(
-				'rule' => array('uuid'),
+				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -24,7 +24,7 @@ class Student extends AppModel {
 		),
 		'course_id' => array(
 			'uuid' => array(
-				'rule' => array('uuid'),
+				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

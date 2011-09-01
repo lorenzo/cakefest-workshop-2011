@@ -33,8 +33,16 @@ class CourseTestCase extends CakeTestCase {
 	public function tearDown() {
 		unset($this->Course);
 		ClassRegistry::flush();
-
 		parent::tearDown();
+	}
+
+	public function testEnrollNewStudent() {
+		$course = $this->Course->read(null, 'course-1');
+		$this->assertEquals(array('user-1'), Set::extract('/Student/user_id', $course));
+		$this->Course->enroll($course, 'user-3');
+
+		$course = $this->Course->read(null, 'course-1');
+		$this->assertEquals(array('user-1', 'user-3'), Set::extract('/Student/user_id', $course));
 	}
 
 }
