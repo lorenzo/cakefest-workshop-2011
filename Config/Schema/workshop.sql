@@ -1,11 +1,3 @@
-
-[36mWelcome to CakePHP v2.0.0-beta Console[0m
----------------------------------------------------------------
-App : workshop
-Path: /Users/lorenzo/Sites/workshop/
----------------------------------------------------------------
-Cake Schema Shell
----------------------------------------------------------------
 #Workshop sql generated on: 2011-09-01 13:31:07 : 1314883867
 
 DROP TABLE IF EXISTS `courses`;
