@@ -12,7 +12,7 @@ class CourseTestCase extends CakeTestCase {
  *
  * @var array
  */
-	public $fixtures = array('app.course', 'app.instructor', 'app.user', 'app.student', 'app.wiki_entry', 'app.wiki_entry_revision');
+	public $fixtures = array('app.course', 'app.instructor', 'app.user', 'app.student');
 
 /**
  * setUp method

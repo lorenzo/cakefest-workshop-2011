@@ -29,10 +29,17 @@ class CourseFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '4e5f8ac7-de70-44b2-8920-4af7db7d79a7',
-			'code' => 'Lorem ip',
-			'name' => 'Lorem ipsum dolor sit amet',
-			'description' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'id' => 'course-1',
+			'code' => 'CAKE-111',
+			'name' => 'Cake 101',
+			'description' => 'A course description',
+			'created' => '2011-09-01'
+		),
+		array(
+			'id' => 'course-2',
+			'code' => 'CAKE-211',
+			'name' => 'Cake 201',
+			'description' => 'A course description',
 			'created' => '2011-09-01'
 		),
 	);

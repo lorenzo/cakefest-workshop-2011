@@ -31,13 +31,31 @@ class UserFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '4e5f8a76-291c-4f8d-9699-4daedb7d79a7',
-			'full_name' => 'Lorem ipsum dolor sit amet',
-			'email' => 'Lorem ipsum dolor sit amet',
-			'username' => 'Lorem ipsum d',
-			'password' => 'Lorem ipsum dolor sit amet',
-			'last_seen' => 1,
+			'id' => 'user-1',
+			'full_name' => 'Chuck Norris',
+			'email' => 'chuck@norris.com',
+			'username' => 'chuck',
+			'password' => 'norris',
+			'last_seen' => 0,
 			'admin' => 1
+		),
+		array(
+			'id' => 'user-2',
+			'full_name' => 'Bruce Lee',
+			'email' => 'bruce@lee.com',
+			'username' => 'bruce',
+			'password' => 'lee',
+			'last_seen' => 0,
+			'admin' => 0
+		),
+		array(
+			'id' => 'user-3',
+			'full_name' => 'Jackie Chan',
+			'email' => 'jackie@chan.com',
+			'username' => 'jackie',
+			'password' => 'chan',
+			'last_seen' => 0,
+			'admin' => 0
 		),
 	);
 }

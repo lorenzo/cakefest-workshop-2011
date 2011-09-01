@@ -27,9 +27,14 @@ class InstructorFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '4e5f8a80-ffe8-45d2-8bd4-4e64db7d79a7',
-			'user_id' => 'Lorem ipsum dolor sit amet',
-			'course_id' => 'Lorem ipsum dolor sit amet'
+			'id' => 'instructor-1',
+			'user_id' => 'user-1',
+			'course_id' => 'course-1'
+		),
+		array(
+			'id' => 'instructor-2',
+			'user_id' => 'user-3',
+			'course_id' => 'course-2'
 		),
 	);
 }
