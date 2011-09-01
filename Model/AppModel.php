@@ -31,4 +31,6 @@ App::uses('Model', 'Model');
  * @package       Cake.Console.Templates.skel.Model
  */
 class AppModel extends Model {
+
+	public $actsAs = array('Containable');
 }
