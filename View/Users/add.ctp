@@ -7,7 +7,6 @@
 		echo $this->Form->input('email');
 		echo $this->Form->input('username');
 		echo $this->Form->input('password');
-		echo $this->Form->input('last_seen');
 		echo $this->Form->input('admin');
 	?>
 	</fieldset>
@@ -18,9 +17,5 @@
 	<ul>
 
 		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Instructors'), array('controller' => 'instructors', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Instructor'), array('controller' => 'instructors', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Students'), array('controller' => 'students', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Student'), array('controller' => 'students', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

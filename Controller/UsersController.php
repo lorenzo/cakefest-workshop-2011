@@ -7,6 +7,11 @@
 class UsersController extends AppController {
 
 
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->allow('add');
+	}
+
 /**
  * index method
  *
@@ -39,6 +44,7 @@ class UsersController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->User->create();
+			$this->request->data['User']['password'] = $this->Auth->password($this->request->data['User']['password']);
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));
@@ -60,6 +66,7 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+			$this->request->data['User']['password'] = $this->Auth->password($this->request->data['User']['password']);
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));
@@ -68,6 +75,7 @@ class UsersController extends AppController {
 			}
 		} else {
 			$this->request->data = $this->User->read(null, $id);
+			unset($this->request->data['User']['password']);
 		}
 	}
 
@@ -91,5 +99,17 @@ class UsersController extends AppController {
 		}
 		$this->Session->setFlash(__('User was not deleted'));
 		$this->redirect(array('action' => 'index'));
+	}
+
+	public function login() {
+		if ($this->Auth->login()) {
+			$this->redirect($this->Auth->redirect());
+		} else {
+			$this->Session->setFlash(__('You need to supply valid credentials'));
+		}
+	}
+
+	public function logout() {
+		$this->redirect($this->Auth->logout());
 	}
 }

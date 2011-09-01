@@ -31,4 +31,6 @@ App::uses('Controller', 'Controller');
  * @package       Cake.Console.Templates.skel.Controller
  */
 class AppController extends Controller {
+
+	public $components = array('Session', 'Auth');
 }
