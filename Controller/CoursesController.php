@@ -92,4 +92,19 @@ class CoursesController extends AppController {
 		$this->Session->setFlash(__('Course was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+	public function enroll($id) {
+		$course = $this->Course->read(null, $id);
+		if (!$course) {
+			throw new NotFoundException(__('Invalid Course'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			try {
+				$this->Course->enroll($course, $this->Auth->user('id'));
+			} catch (Exception $e) {
+				$this->Session->setFlash($e->getMessage());
+			}
+		}
+		$this->redirect(array('action' => 'view', $id));
+	}
 }

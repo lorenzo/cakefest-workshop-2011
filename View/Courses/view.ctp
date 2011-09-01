@@ -35,6 +35,7 @@
 		<li><?php echo $this->Form->postLink(__('Delete Course'), array('action' => 'delete', $course['Course']['id']), null, __('Are you sure you want to delete # %s?', $course['Course']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Courses'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Course'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Enroll'), array('action' => 'enroll',  $course['Course']['id'])); ?> </li>
 	</ul>
 </div>
 <div class="related">

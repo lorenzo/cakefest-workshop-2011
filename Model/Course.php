@@ -72,4 +72,14 @@ class Course extends AppModel {
 		)
 	);
 
+	public function enroll($course, $userId) {
+		$exists = $this->Student->field('id', array('course_id' => $course['Course']['id'], 'user_id' => $userId));
+		if ($exists) {
+			throw new DomainException(__('You are already enrolled in this course'));
+		}
+		if (!$this->Student->save(array('course_id' => $course['Course']['id'], 'user_id' => $userId))) {
+			throw new Exception(__('An unexpected error happened, please try again'));
+		}
+	}
+
 }
