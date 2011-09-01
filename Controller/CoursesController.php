@@ -111,4 +111,21 @@ class CoursesController extends AppController {
 		}
 		$this->redirect(array('action' => 'view', $id));
 	}
+
+	public function add_instructor($id) {
+		$course = $this->Course->read(null, $id);
+		if (!$course) {
+			throw new NotFoundException(__('Invalid Course'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			try {
+				$this->Course->addInstructor($course, $this->request->data['Course']['instructor']);
+				$this->redirect(array('action' => 'view', $id));
+			} catch (Exception $e) {
+				$this->Session->setFlash($e->getMessage());
+			}
+		}
+		$users = $this->Course->Instructor->find('available', array('course' => $id));
+		$this->set(compact('users'));
+	}
 }

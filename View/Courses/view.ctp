@@ -36,6 +36,7 @@
 		<li><?php echo $this->Html->link(__('List Courses'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Course'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Form->postLink(__('Enroll'), array('action' => 'enroll',  $course['Course']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Add Instructor'), array('action' => 'add_instructor', $course['Course']['id'])); ?> </li>
 	</ul>
 </div>
 <div class="related">

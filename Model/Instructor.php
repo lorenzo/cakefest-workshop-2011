@@ -57,4 +57,21 @@ class Instructor extends AppModel {
 			'order' => ''
 		)
 	);
+
+	public $findMethods = array('available' => true);
+	
+	protected function _findAvailable($state, $query, $results = array()) {
+		if ($state == 'before') {
+			$query['conditions']['course_id'] = $query['course'];
+			return $query;
+		}
+		$students = $this->Course->Student->find('all', array(
+			'fields' => array('Student.user_id'),
+			'conditions' => array('Student.course_id' => $query['course'])
+		));
+		$unavailble = array_merge(Set::extract('/Instructor/id', $results), Set::extract('/Student/user_id', $students));
+		return $this->User->find('list', array(
+			'conditions' => array('NOT' => array('User.id' => $unavailble))
+		));
+	}
 }

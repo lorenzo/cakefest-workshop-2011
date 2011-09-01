@@ -6,6 +6,9 @@
  * @property Student $Student
  */
 class User extends AppModel {
+
+	public $displayField = 'full_name';
+
 /**
  * Validation rules
  *

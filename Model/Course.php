@@ -82,4 +82,13 @@ class Course extends AppModel {
 		}
 	}
 
+	public function addInstructor($course, $userId) {
+		$exists = $this->Instructor->field('id', array('course_id' => $course['Course']['id'], 'user_id' => $userId));
+		if ($exists) {
+			throw new DomainException(__('This instructor is already added'));
+		}
+		if (!$this->Instructor->save(array('course_id' => $course['Course']['id'], 'user_id' => $userId))) {
+			throw new Exception(__('An unexpected error happened, please try again'));
+		}
+	}
 }
