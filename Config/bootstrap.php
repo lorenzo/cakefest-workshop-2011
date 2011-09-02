@@ -70,3 +70,8 @@ CakePlugin::load(array(
 	'Wiki',
 	'MarkupParsers'
 ));
+
+Configure::write('Parsers.markdown', array(
+	'name' => 'markdown',
+	'class' => array('MarkdownParser', 'MarkupParsers.Parser')
+));
