@@ -35,14 +35,15 @@ class AppController extends Controller {
 	public $components = array(
 		'Session',
 		'Auth' => array(
+			'authenticate' => array('Form', 'Basic'),
 			'authorize' => array('Workshop')
 		),
-		'DebugKit.Toolbar',
+		//'DebugKit.Toolbar',
 		'RequestHandler'
 	);
 
 	public function redirect($url, $status = null, $exit = true) {
-		if ($this->RequestHandler->prefers('json')) {
+		if ($this->RequestHandler->prefers('json') && $this->Auth->user()) {
 			return;
 		}
 		parent::redirect($url, $status, $exit);

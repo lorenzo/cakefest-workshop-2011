@@ -7,7 +7,7 @@
 class CoursesController extends AppController {
 
 	public function beforeFilter() {
-		$this->Auth->allow('index', 'view');
+		$this->Auth->allow('index','view');
 	}
 
 /**
