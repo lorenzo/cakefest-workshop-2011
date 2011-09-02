@@ -13,7 +13,10 @@ class WikiEntryRevisionsController extends WikiAppController {
  *
  * @return void
  */
-	public function index() {
+	public function index($wikiEntry) {
+		$this->paginate = array(
+			'conditions' => array('WikiEntry.id' => $wikiEntry)
+		);
 		$this->WikiEntryRevision->recursive = 0;
 		$this->set('wikiEntryRevisions', $this->paginate());
 	}

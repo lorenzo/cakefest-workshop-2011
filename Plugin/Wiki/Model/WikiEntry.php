@@ -74,4 +74,5 @@ class WikiEntry extends WikiAppModel {
 		)
 	);
 
+	public $actsAs = array('Wiki.Revision');
 }
