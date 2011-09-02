@@ -40,4 +40,11 @@ class AppController extends Controller {
 		'DebugKit.Toolbar',
 		'RequestHandler'
 	);
+
+	public function redirect($url, $status = null, $exit = true) {
+		if ($this->RequestHandler->prefers('json')) {
+			return;
+		}
+		parent::redirect($url, $status, $exit);
+	}
 }

@@ -17,6 +17,7 @@ class Course extends AppModel {
 		'code' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
+				'required' => true,
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -27,6 +28,7 @@ class Course extends AppModel {
 		'name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
+				'required' => true,
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
