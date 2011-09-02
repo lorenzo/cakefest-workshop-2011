@@ -7,7 +7,7 @@
 class CoursesController extends AppController {
 
 	public function beforeFilter() {
-		$this->Auth->allow('index', 'view');
+		$this->Auth->allow('index', 'view', 'add');
 	}
 
 /**
@@ -47,10 +47,10 @@ class CoursesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Course->create();
 			if ($this->Course->save($this->request->data)) {
-				$this->Session->setFlash(__('The course has been saved'));
+				$this->Session->setFlash(__('The course has been saved'), 'success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The course could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The course could not be saved. Please, try again.'), 'error');
 			}
 		}
 	}

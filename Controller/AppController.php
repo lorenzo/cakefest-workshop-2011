@@ -38,5 +38,6 @@ class AppController extends Controller {
 			'authorize' => array('Workshop')
 		),
 		'DebugKit.Toolbar',
+		'RequestHandler'
 	);
 }
