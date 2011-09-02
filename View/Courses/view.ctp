@@ -37,6 +37,8 @@
 		<li><?php echo $this->Html->link(__('New Course'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Form->postLink(__('Enroll'), array('action' => 'enroll',  $course['Course']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('Add Instructor'), array('action' => 'add_instructor', $course['Course']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Go to the wiki'), array('plugin' => 'wiki', 'controller' => 'wiki_entries', 
+		'action' => 'index', $course['Course']['id'])); ?> </li>
 	</ul>
 </div>
 <div class="related">

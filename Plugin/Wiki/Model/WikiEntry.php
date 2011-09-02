@@ -1,4 +1,6 @@
 <?php
+
+App::uses('WikiAppModel', 'Wiki.Model');
 /**
  * WikiEntry Model
  *
