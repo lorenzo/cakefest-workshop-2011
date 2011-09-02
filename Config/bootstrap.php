@@ -66,5 +66,6 @@ Cache::config('default', array('engine' => 'File'));
  
 CakePlugin::load(array(
 	'Migrations',
-	'DebugKit'
+	'DebugKit',
+	'Wiki'
 ));
