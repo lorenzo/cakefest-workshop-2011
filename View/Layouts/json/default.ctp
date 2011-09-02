@@ -2,8 +2,8 @@
 	$status = 'success';
 	$message = '';
 	if ($this->Session->check('Message.flash')) {
-		$status = $this->Session->read('Message.element');
-		$message = $this->Session->read('Message.message');
+		$status = $this->Session->read('Message.flash.element');
+		$message = $this->Session->read('Message.flash.message');
 		$this->Session->flash();
 	}
 	$errors = array();
