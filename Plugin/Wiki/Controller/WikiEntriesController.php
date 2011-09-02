@@ -45,10 +45,10 @@ class WikiEntriesController extends WikiAppController {
 	public function add($courseId) {
 		if ($this->request->is('post')) {
 			$this->WikiEntry->create();
+			$this->request->data['WikiEntry']['course_id'] = $courseId;
 			if ($this->WikiEntry->save($this->request->data)) {
-				$this->request->data['WikiEntry']['course_id'] = $courseId;
 				$this->Session->setFlash(__('The wiki entry has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'index', $courseId));
 			} else {
 				$this->Session->setFlash(__('The wiki entry could not be saved. Please, try again.'));
 			}
