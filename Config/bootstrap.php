@@ -63,11 +63,14 @@ Cache::config('default', array('engine' => 'File'));
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
+
+App::uses('IniReader', 'Configure');
+Configure::config('workshop_permission', new IniReader(__DIR__ . DS));
  
 CakePlugin::load(array(
 	'Migrations',
 	'DebugKit',
-	'Wiki',
+	'Wiki' => array('bootstrap' => true),
 	'MarkupParsers'
 ));
 

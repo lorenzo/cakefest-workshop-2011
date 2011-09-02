@@ -34,7 +34,9 @@ class AppController extends Controller {
 
 	public $components = array(
 		'Session',
-		'Auth',
-		'DebugKit.Toolbar'
+		'Auth' => array(
+			'authorize' => array('Workshop')
+		),
+		'DebugKit.Toolbar',
 	);
 }
