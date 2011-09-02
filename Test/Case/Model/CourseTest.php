@@ -45,4 +45,22 @@ class CourseTestCase extends CakeTestCase {
 		$this->assertEquals(array('user-1', 'user-3'), Set::extract('/Student/user_id', $course));
 	}
 
+	/**
+	 * A user cannot be enrolled twice
+	 *
+	 * @return void
+	 * @expectedException DomainException
+	 */
+	public function testEnrollExistingStudent() {
+		$course = $this->Course->read(null, 'course-1');
+		$this->Course->enroll($course, 'user-1');
+	}
+
+	public function testAddInstructor() {
+		$course = $this->Course->read(null, 'course-2');
+		$this->Course->addInstructor($course, 'user-1');
+
+		$course = $this->Course->read(null, 'course-2');
+		$this->assertEquals(array('user-1', 'user-3'), Set::extract('/Instructor/user_id', $course));
+	}
 }
